@@ -25,3 +25,5 @@ Decide which directory groups may do what in the app.
 
 ## Open Questions
 
+1. The platform gates each API call on one permission, so the three customer allocate privileges (Paid, pre-sale, post-sale) become a single allocate permission, and the app's own role-to-privilege table is stored and audit-logged but does not by itself change what a signed-in person may call. Is that acceptable, or must the administrator's mapping decide access?
+
