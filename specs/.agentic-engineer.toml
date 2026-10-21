@@ -2,3 +2,11 @@ apiVersion = "agentic-engineer/v1"
 name = "allocation-app-3"
 createdAt = "2026-10-21T00:59:53Z"
 idea = "allocation app"
+
+[recreate]
+  producer = "code-to-spec"
+  producerVersion = "1.0"
+  sourceRepository = "git@github.com:wso2-enterprise/digiops-finance.git"
+  sourceCommit = "d14b825"
+  bundleFormat = "aespecs/1"
+  seededAt = "2026-10-21T00:59:58Z"

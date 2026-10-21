@@ -1,0 +1,35 @@
+{
+  "name": "servicenow-consultant-skills",
+  "resource": {
+    "name": "servicenow-consultant-skills",
+    "description": "The register of consultant skills: the skill catalogue, and a search for the consultants who hold a given set of skills, used to staff an engagement.",
+    "provider": "ServiceNow, the organization's instance, through its \"find consultants by skills\" scripted REST API",
+    "config": [
+      {
+        "key": "SERVICENOW_CONSULTANT_SKILLS_URL",
+        "description": "Base address of the scripted REST API on the ServiceNow instance",
+        "secret": false
+      },
+      {
+        "key": "SERVICENOW_CONSULTANT_SKILLS_TOKEN_URL",
+        "description": "Token address for the client-credentials grant",
+        "secret": false
+      },
+      {
+        "key": "SERVICENOW_CONSULTANT_SKILLS_CLIENT_ID",
+        "description": "Client id for the client-credentials grant",
+        "secret": false
+      },
+      {
+        "key": "SERVICENOW_CONSULTANT_SKILLS_CLIENT_SECRET",
+        "description": "Client secret for the client-credentials grant",
+        "secret": true
+      }
+    ],
+    "contract": {
+      "type": "openapi",
+      "path": "openapi.yaml",
+      "origin": "derived"
+    }
+  }
+}

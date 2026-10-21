@@ -1,0 +1,40 @@
+{
+  "name": "email-notifications-service",
+  "resource": {
+    "name": "email-notifications-service",
+    "description": "Sends templated notification email on the product's behalf: an engagement raised, updated, approved or cancelled, and an allocation's clearance notices.",
+    "provider": "the organization's email notifications service, a template-based relay in front of the mail system",
+    "config": [
+      {
+        "key": "EMAIL_NOTIFICATIONS_SERVICE_URL",
+        "description": "Base address of the service",
+        "secret": false
+      },
+      {
+        "key": "EMAIL_NOTIFICATIONS_SERVICE_TOKEN_URL",
+        "description": "Token address for the client-credentials grant",
+        "secret": false
+      },
+      {
+        "key": "EMAIL_NOTIFICATIONS_SERVICE_CLIENT_ID",
+        "description": "Client id for the client-credentials grant",
+        "secret": false
+      },
+      {
+        "key": "EMAIL_NOTIFICATIONS_SERVICE_CLIENT_SECRET",
+        "description": "Client secret for the client-credentials grant",
+        "secret": true
+      },
+      {
+        "key": "EMAIL_NOTIFICATIONS_SERVICE_APP_ID",
+        "description": "The identifier the service knows the calling app by, sent in every request",
+        "secret": false
+      }
+    ],
+    "contract": {
+      "type": "openapi",
+      "path": "openapi.yaml",
+      "origin": "derived"
+    }
+  }
+}

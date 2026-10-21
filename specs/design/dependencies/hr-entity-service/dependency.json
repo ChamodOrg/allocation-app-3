@@ -1,0 +1,35 @@
+{
+  "name": "hr-entity-service",
+  "resource": {
+    "name": "hr-entity-service",
+    "description": "Employees with their business unit, department, team and company placement, reporting lines, employment status and final day of employment, and the organization structure with its countries; read only for this product.",
+    "provider": "the organization's HR entity service, backed by the HR information system",
+    "config": [
+      {
+        "key": "HR_ENTITY_SERVICE_URL",
+        "description": "Address of the service's GraphQL interface",
+        "secret": false
+      },
+      {
+        "key": "HR_ENTITY_SERVICE_TOKEN_URL",
+        "description": "Token address for the client-credentials grant",
+        "secret": false
+      },
+      {
+        "key": "HR_ENTITY_SERVICE_CLIENT_ID",
+        "description": "Client id for the client-credentials grant",
+        "secret": false
+      },
+      {
+        "key": "HR_ENTITY_SERVICE_CLIENT_SECRET",
+        "description": "Client secret for the client-credentials grant",
+        "secret": true
+      }
+    ],
+    "contract": {
+      "type": "graphql",
+      "path": "schema.graphql",
+      "origin": "derived"
+    }
+  }
+}

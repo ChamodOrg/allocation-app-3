@@ -1,0 +1,35 @@
+{
+  "name": "sales-entity-service",
+  "resource": {
+    "name": "sales-entity-service",
+    "description": "Customers and prospects, their opportunities and the opportunity line items (products) a paid customer engagement is raised from; read only for this product.",
+    "provider": "the organization's sales entity service, backed by Salesforce",
+    "config": [
+      {
+        "key": "SALES_ENTITY_SERVICE_URL",
+        "description": "Address of the service's GraphQL interface",
+        "secret": false
+      },
+      {
+        "key": "SALES_ENTITY_SERVICE_TOKEN_URL",
+        "description": "Token address for the client-credentials grant",
+        "secret": false
+      },
+      {
+        "key": "SALES_ENTITY_SERVICE_CLIENT_ID",
+        "description": "Client id for the client-credentials grant",
+        "secret": false
+      },
+      {
+        "key": "SALES_ENTITY_SERVICE_CLIENT_SECRET",
+        "description": "Client secret for the client-credentials grant",
+        "secret": true
+      }
+    ],
+    "contract": {
+      "type": "graphql",
+      "path": "schema.graphql",
+      "origin": "derived"
+    }
+  }
+}

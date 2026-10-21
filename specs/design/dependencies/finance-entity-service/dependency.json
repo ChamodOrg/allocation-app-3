@@ -1,0 +1,35 @@
+{
+  "name": "finance-entity-service",
+  "resource": {
+    "name": "finance-entity-service",
+    "description": "The system of record for engagements, consultant allocations and visa records: every engagement and allocation the product shows is read from it and every change is written back to it.",
+    "provider": "the organization's finance entity service",
+    "config": [
+      {
+        "key": "FINANCE_ENTITY_SERVICE_URL",
+        "description": "Address of the service's GraphQL interface",
+        "secret": false
+      },
+      {
+        "key": "FINANCE_ENTITY_SERVICE_TOKEN_URL",
+        "description": "Token address for the client-credentials grant",
+        "secret": false
+      },
+      {
+        "key": "FINANCE_ENTITY_SERVICE_CLIENT_ID",
+        "description": "Client id for the client-credentials grant",
+        "secret": false
+      },
+      {
+        "key": "FINANCE_ENTITY_SERVICE_CLIENT_SECRET",
+        "description": "Client secret for the client-credentials grant",
+        "secret": true
+      }
+    ],
+    "contract": {
+      "type": "graphql",
+      "path": "schema.graphql",
+      "origin": "derived"
+    }
+  }
+}
