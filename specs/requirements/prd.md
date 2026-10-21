@@ -33,8 +33,8 @@ One place to raise an engagement request from a CRM opportunity or for internal 
 
 ## Fog
 
-- An Events area of its own: a page address and a hidden menu entry exist with no page behind them, and events live under internal engagements today. [webapp · src/Config.js:123]
-- Travel requests raised from an allocation: the README promises automatic travel requests and the finance system models them, but the app only copies the travel team on notifications. [README.md · Features §2]
+- An Events area of its own: a page address and a hidden menu entry exist with no page behind them, and events live under internal engagements today. \[webapp · src/Config.js:123\]
+- Travel requests raised from an allocation: the README promises automatic travel requests and the finance system models them, but the app only copies the travel team on notifications. \[README.md · Features §2\]
 
 ## Product-wide
 
@@ -44,10 +44,11 @@ Rules that apply to more than one feature, such as sign-in (P1), the requester b
 
 - Consultants using the app: they are notified by email and answer through their lead. *assumed*
 - Raising or booking travel; the app only tells the travel team when travel is involved. *assumed*
-- Deleting or renaming an access role, or defining new privileges. [backend · jwt_interceptor.bal:362]
+- Deleting or renaming an access role, or defining new privileges. \[backend · jwt\_interceptor.bal:362\]
 
 ## Open Questions
 
 1. The problem statement and the seven actors are read from the README, the app's own description and the way its privileges cluster; do they match how the directory groups are actually assigned?
 2. The README lists six areas; the code also has engagement approvals, consultant search by skill with suggested skills, and five customer engagement types rather than three. Are all of these wanted in the recreate?
 3. The README says allocating a consultant generates a travel request automatically; the code only copies the travel team on notifications. Which is the requirement?
+
