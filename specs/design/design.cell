@@ -1,0 +1,26 @@
+title Allocations App
+
+component allocations-webapp as "Allocations Web App" web-application
+component allocations-api as "Allocations API" service
+component allocations-db as "Allocations Database" database
+
+east user-auth as "Thunder Auth" identity-server
+
+south finance-entity-service as "Finance Entity Service" service
+south hr-entity-service as "HR Entity Service" service
+south sales-entity-service as "Sales Entity Service" service
+south email-notifications-service as "Email Notifications Service" service
+south servicenow-consultant-skills as "ServiceNow Consultant Skills" service
+
+north -> allocations-webapp
+north -> allocations-api
+
+allocations-webapp -> allocations-api
+allocations-webapp -> user-auth
+allocations-api -> user-auth
+allocations-api -> allocations-db
+allocations-api -> finance-entity-service
+allocations-api -> hr-entity-service
+allocations-api -> sales-entity-service
+allocations-api -> email-notifications-service
+allocations-api -> servicenow-consultant-skills

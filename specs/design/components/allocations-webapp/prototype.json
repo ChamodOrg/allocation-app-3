@@ -1,0 +1,48 @@
+{
+  "schemaVersion": 3,
+  "name": "Allocations App",
+  "entryScreen": "screen.engagements",
+  "roles": [
+    { "id": "Requester", "name": "Requester" },
+    { "id": "Approver", "name": "Approver" },
+    { "id": "AllocationManager", "name": "Allocation manager" },
+    { "id": "TeamManager", "name": "Team manager" },
+    { "id": "FinanceAnalyst", "name": "Finance analyst" },
+    { "id": "Administrator", "name": "Administrator" }
+  ],
+  "states": [
+    { "id": "state.default", "name": "Default" },
+    { "id": "state.empty", "name": "Nothing to show" },
+    { "id": "state.validation-error", "name": "Validation errors" },
+    { "id": "state.failed", "name": "Outside service failed" },
+    { "id": "state.delayed", "name": "Skills suggestions delayed" }
+  ],
+  "screens": [
+    { "id": "screen.engagements", "name": "Engagements", "roleIds": ["Requester", "AllocationManager"] },
+    { "id": "screen.engagement-form", "name": "Engagement request", "roleIds": ["Requester"] },
+    { "id": "screen.allocations", "name": "Allocation workspace", "roleIds": ["AllocationManager"] },
+    { "id": "screen.engagement-allocations", "name": "Engagement allocations", "roleIds": ["AllocationManager"] },
+    { "id": "screen.approvals", "name": "Approvals", "roleIds": ["Approver"] },
+    { "id": "screen.team-allocations", "name": "Team allocations", "roleIds": ["TeamManager"] },
+    { "id": "screen.dashboard", "name": "Dashboard", "roleIds": ["FinanceAnalyst"] },
+    { "id": "screen.report", "name": "Consultant allocations report", "roleIds": ["FinanceAnalyst"] },
+    { "id": "screen.allocation-types", "name": "Allocation types", "roleIds": ["Administrator"] },
+    { "id": "screen.partners", "name": "Partner consultants", "roleIds": ["Administrator"] },
+    { "id": "screen.roles", "name": "Access roles", "roleIds": ["Administrator"] },
+    { "id": "screen.account", "name": "Account", "roleIds": ["Requester", "Approver", "AllocationManager", "TeamManager", "FinanceAnalyst", "Administrator"] },
+    { "id": "screen.signed-out", "name": "Signed out", "roleIds": ["Requester", "Approver", "AllocationManager", "TeamManager", "FinanceAnalyst", "Administrator"] }
+  ],
+  "flows": [
+    { "id": "flow.raise-engagement", "name": "Raise an engagement request", "roleId": "Requester", "screenIds": ["screen.engagements", "screen.engagement-form"] },
+    { "id": "flow.cancel-engagement", "name": "Cancel an engagement", "roleId": "Requester", "screenIds": ["screen.engagements"] },
+    { "id": "flow.approve", "name": "Approve an internal engagement", "roleId": "Approver", "screenIds": ["screen.approvals"] },
+    { "id": "flow.allocate", "name": "Allocate a consultant", "roleId": "AllocationManager", "screenIds": ["screen.engagements", "screen.allocations"] },
+    { "id": "flow.clear-allocations", "name": "Move allocations through clearance", "roleId": "AllocationManager", "screenIds": ["screen.engagement-allocations"] },
+    { "id": "flow.team", "name": "Maintain team default allocations", "roleId": "TeamManager", "screenIds": ["screen.team-allocations"] },
+    { "id": "flow.dashboard", "name": "Read the dashboard", "roleId": "FinanceAnalyst", "screenIds": ["screen.dashboard"] },
+    { "id": "flow.report", "name": "Run the allocations report", "roleId": "FinanceAnalyst", "screenIds": ["screen.report"] },
+    { "id": "flow.allocation-types", "name": "Maintain allocation types", "roleId": "Administrator", "screenIds": ["screen.allocation-types"] },
+    { "id": "flow.partners", "name": "Maintain partner consultants", "roleId": "Administrator", "screenIds": ["screen.partners"] },
+    { "id": "flow.roles", "name": "Change a role's privileges", "roleId": "Administrator", "screenIds": ["screen.roles"] }
+  ]
+}

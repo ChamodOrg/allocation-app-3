@@ -27,6 +27,9 @@ erDiagram
     ENGAGEMENT_CODE ||--o{ ENGAGEMENT : codes
     ENGAGEMENT_CODE ||--o{ ALLOCATION : codes
     EMPLOYEE }o--o{ SKILL : has
+    ROLE }o--o{ PRIVILEGE : holds
+    ROLE ||--o{ AUDIT_LOG : "changes logged in"
+    ALLOCATION_TYPE ||--o{ AUDIT_LOG : "changes logged in"
 
     ENGAGEMENT_TYPE {
         int id
@@ -170,6 +173,22 @@ erDiagram
     SKILL {
         string id
         string name
+    }
+    ROLE {
+        int id
+        string name
+    }
+    PRIVILEGE {
+        int id
+        string name
+        string status
+    }
+    AUDIT_LOG {
+        string resource
+        string action
+        string userEmail
+        string description
+        datetime createdAt
     }
 ```
 
